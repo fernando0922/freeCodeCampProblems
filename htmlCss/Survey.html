@@ -1,14 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Survey</title>
-</head>
-<body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-</body>
+
+    <style>
+      #main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: linear-gradient(45deg, #c6e2ff, #ffb6c1);
+        color: #e30b5d;
+        font-family: monospace;
+      }
+      #description {
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      #survey-form {
+        width: 50%;
+        border: 2px solid #f64588;
+        border-radius: 10px;
+        box-sizing: border-box;
+      }
+
+      .data-container {
+        margin: 5% auto;
+        padding: 0% 10%;
+      }
+
+      .input-data {
+        border-radius: 4px;
+        border-style: none;
+        width: 100%;
+        font-size: 1.3em;
+        padding-left: 2%;
+        color: #0b5de3;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .label-data {
+        color: #e30b5d;
+        font-size: 1em;
+        display: inline-block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .input-data-button {
+        border-radius: 4px;
+        border-style: none;
+        width: 100%;
+        font-size: 1.3em;
+        color: #e30b5d;
+        animation: button-hover 2s infinite linear alternate;
+      }
+
+      @keyframes button-hover {
+        0% {
+            background-color: #fff;
+        }
+        100% {
+            background-color: #ffb6c1;
+        }
+      }
+
+      .input-data-button:hover{
+          cursor: pointer;
+      }
+    </style>
+  </head>
+  <body id="main-container">
+    <header>
+      <h1 id="title">Anime Survey Form</h1>
+      <p id="description">For all Anime Fans out there</p>
+    </header>
+
+    <form id="survey-form">
+      <div class="data-container">
+        <label class="label-data" id="name-label" for="name">Name</label>
+        <input
+          id="name"
+          class="input-data"
+          type="text"
+          placeholder="enter name"
+          autocomplete="off"
+          required
+        />
+      </div>
+
+      <div class="data-container">
+        <label class="label-data" id="email-label" for="email">Email</label>
+        <input
+          id="email"
+          class="input-data"
+          type="email"
+          placeholder="enter email"
+          autocomplete="off"
+          required
+        />
+      </div>
+
+      <div class="data-container">
+        <label class="label-data" id="number-label" for="number"
+          >Phone Number</label
+        >
+        <input
+          id="number"
+          class="input-data"
+          type="number"
+          placeholder="enter phone number"
+          min="0"
+          max="999999999"
+          autocomplete="off"
+          required
+        />
+      </div>
+
+      <div class="data-container">
+        <label class="label-data" for="email">Why do you watch anime ?</label>
+        <select id="dropdown" class="input-data">
+          <option disabled selected></option>
+          <option value="1">DO I NEED A REASON ?</option>
+          <option value="2">ESCAPE FROM REALITY</option>
+          <option value="3">TIME PASS</option>
+        </select>
+      </div>
+
+      <div class="data-container">
+        <fieldset>
+          <legend class="label-data">
+            WILL YOU WATCH ATLEAST ONE EPISODE IN A DAY ?
+          </legend>
+          <input type="radio" id="yes" name="hard-fan" value="yes" />
+          <label for="yes">YES</label><br />
+          <input type="radio" id="no" name="hard-fan" value="no" />
+          <label for="no">NO</label><br />
+        </fieldset>
+      </div>
+
+      <div class="data-container">
+        <fieldset>
+          <legend class="label-data">
+            TOP ANIME ACCORDING TO YOU (YOU CAN SELECT MORE THEN ONE)
+          </legend>
+          <input type="checkbox" id="op" name="top" value="op" />
+          <label for="op">ONE PEICE</label><br />
+
+          <input type="checkbox" id="na" name="top" value="na" />
+          <label for="na">NARUTO</label><br />
+
+          <input type="checkbox" id="bl" name="top" value="bl" />
+          <label for="bl">BLEACH</label><br />
+
+          <input type="checkbox" id="ot" name="top" value="ot" />
+          <label for="ot">THESE 3 AS WELL AS MANY MORE</label><br />
+        </fieldset>
+      </div>
+
+      <div class="data-container">
+        <label class="label-data" for="textarea">ANY OTHER COMMENTS</label>
+        <textarea
+          id="textarea"
+          class="input-data"
+          type="textarea"
+          placeholder="Comments or Suggestions Can be entred here"
+          autocomplete="off"
+          rows="7"
+          cols="50"
+        ></textarea>
+      </div>
+
+      <div class="data-container">
+        <button class="input-data-button" id="submit" type="submit">
+          SUBMIT DATA
+        </button>
+      </div>
+    </form>
+  </body>
 </html>
