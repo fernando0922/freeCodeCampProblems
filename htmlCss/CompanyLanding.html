@@ -13,11 +13,14 @@
       #container {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 1fr auto 1fr;
+        grid-template-rows: auto;
+        grid-auto-rows: auto;
       }
 
       header {
         grid-column: span 12;
+        border-bottom: 1px solid gray;
+        background-color: beige;
       }
 
       #header {
@@ -26,8 +29,6 @@
         position: fixed;
         left: 0px;
         top: 0px;
-        background-color: beige;
-        border-bottom: 1px solid gray;
       }
 
       #header-img {
@@ -55,24 +56,28 @@
 
       main {
         grid-column: span 12;
+        max-width: 100%;
+        width: 100%;
         margin: 3% auto;
+        box-sizing: border-box;
       }
 
-      section{
-          margin-bottom: 20%;
+      #form-section,#description{
+          text-align: center;
+          margin-bottom: 4%;
       }
 
       #email {
-        width: 60%;
+        width: 30%;
         font-size: 15px;
         display: block;
-        margin: 2% auto;
+        margin: auto;
       }
 
       #submit {
         display: block;
-        margin: 4% auto;
-        width: 20%;
+        margin: 1% auto;
+        width: 10%;
         font-size: 20px;
         border-radius: 7px;
         background-color: rgb(245, 245, 10);
@@ -87,6 +92,9 @@
       }
       footer {
         grid-column: span 12;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        background-color: beige;
       }
     </style>
   </head>
@@ -105,7 +113,7 @@
         </nav>
       </header>
       <main>
-        <section>
+        <section id="form-section">
           <h1>Best in market, more details can be mailed</h1>
           <form action=" https://www.freecodecamp.com/email-submit">
             <input
@@ -119,24 +127,51 @@
             <button id="submit" type="submit">Send</button>
           </form>
         </section>
-        <section id="description">
-          <!-- description -->
-        </section>
-        <section id="demo">
-          <iframe
-            id="video"
-            height="315"
-            src="https://www.youtube-nocookie.com/embed/y8Yv4pnO7qc?rel=0&amp;controls=0&amp;showinfo=0"
-            frameborder="0"
-            allowfullscreen=""
-          ></iframe>
-        </section>
-        <section id="price">
-          <!-- price -->
-        </section>
+        <section id="form-section">
+            <h1>Best in market, more details can be mailed</h1>
+            <form action=" https://www.freecodecamp.com/email-submit">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email here"
+                required
+                autocomplete="off"
+              />
+              <button id="submit" type="submit">Send</button>
+            </form>
+          </section>
+          <section id="form-section">
+            <h1>Best in market, more details can be mailed</h1>
+            <form action=" https://www.freecodecamp.com/email-submit">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email here"
+                required
+                autocomplete="off"
+              />
+              <button id="submit" type="submit">Send</button>
+            </form>
+          </section>
+          <section id="form-section">
+            <h1>Best in market, more details can be mailed</h1>
+            <form action=" https://www.freecodecamp.com/email-submit">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email here"
+                required
+                autocomplete="off"
+              />
+              <button id="submit" type="submit">Send</button>
+            </form>
+          </section>
       </main>
       <footer>
-        <!-- FOOTER DETAILS -->
+        <p style="text-align: end;">Created By DhirajB7</p>
       </footer>
     </div>
   </body>
