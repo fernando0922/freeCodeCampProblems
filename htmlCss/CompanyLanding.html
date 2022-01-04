@@ -6,62 +6,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Landing</title>
     <style>
+      :root {
+        --text-color: #000;
+      }
 
-        #container{
-            display: grid;
-            grid-template-columns: repeat(12,1fr);
-            grid-template-rows: 4fr auto 4fr;
-        }
+      #container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr auto 1fr;
+      }
 
-        header{
-            background-color: aqua;
-            grid-column: span 12;
-            height: 20vh;
-        }
-        
-        main{
-            background-color: blueviolet;
-            grid-column: span 12;
-            height: 60vh;
-        }
-        
-        section{
-            background-color: yellowgreen;
-            width: 40px;
-            height: 20vh;
-        }
-        
-        footer{
-            background-color: pink;
-            grid-column: span 12;
-            height: 20vh;
-        }
+      header {
+        grid-column: span 12;
+      }
 
+      #header {
+        display: flex;
+        justify-content: flex-start;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        background-color: beige;
+        border-bottom: 1px solid gray;
+      }
 
+      #header-img {
+        width: 35%;
+      }
 
+      #nav-bar {
+        align-self: center;
+        margin-left: auto;
+        width: 30%;
+        display: flex;
+        justify-content: space-evenly;
+      }
 
+      .nav-link {
+        text-transform: uppercase;
+        font-size: large;
+        text-decoration: none;
+        color: var(--text-color);
+      }
 
+      .nav-link:hover {
+        cursor: pointer;
+      }
 
+      main {
+        grid-column: span 12;
+        margin: 3% auto;
+      }
+
+      section{
+          margin-bottom: 20%;
+      }
+
+      #email {
+        width: 60%;
+        font-size: 15px;
+        display: block;
+        margin: 2% auto;
+      }
+
+      #submit {
+        display: block;
+        margin: 4% auto;
+        width: 20%;
+        font-size: 20px;
+        border-radius: 7px;
+        background-color: rgb(245, 245, 10);
+      }
+
+      #submit:hover {
+        cursor: pointer;
+      }
+
+      #video{
+          width: 100%;
+      }
+      footer {
+        grid-column: span 12;
+      }
     </style>
   </head>
-  <body>
+  <body style="background-color: beige">
     <div id="container">
-      <header>
-        <nav></nav>
-        <div>
-          <h1></h1>
-          <form></form>
-        </div>
+      <header id="header">
+        <img
+          id="header-img"
+          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/product-landing-page-logo.png"
+          alt="original trombones logo"
+        />
+        <nav id="nav-bar">
+          <a href="#description" class="nav-link">Fetures</a>
+          <a href="#demo" class="nav-link">Demo</a>
+          <a href="#price" class="nav-link">Pricing</a>
+        </nav>
       </header>
       <main>
         <section>
-          <!-- DESCRIPTION -->
+          <h1>Best in market, more details can be mailed</h1>
+          <form action=" https://www.freecodecamp.com/email-submit">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email here"
+              required
+              autocomplete="off"
+            />
+            <button id="submit" type="submit">Send</button>
+          </form>
         </section>
-        <section>
-          <!-- VIDEO -->
+        <section id="description">
+          <!-- description -->
         </section>
-        <section>
-          <!-- PRICE -->
+        <section id="demo">
+          <iframe
+            id="video"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/y8Yv4pnO7qc?rel=0&amp;controls=0&amp;showinfo=0"
+            frameborder="0"
+            allowfullscreen=""
+          ></iframe>
+        </section>
+        <section id="price">
+          <!-- price -->
         </section>
       </main>
       <footer>
