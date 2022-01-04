@@ -75,7 +75,7 @@
         margin: auto;
       }
 
-      #submit {
+      .submit {
         display: block;
         margin: 1% auto;
         width: 10%;
@@ -84,7 +84,7 @@
         background-color: rgb(245, 245, 10);
       }
 
-      #submit:hover {
+      .submit:hover {
         cursor: pointer;
       }
 
@@ -111,14 +111,16 @@
         word-wrap: normal;
       }
 
-      #demo {
-          text-align: center;
+      #demo,
+      #price {
+        text-align: center;
         border: 2px solid #f05bb4;
         margin: 5% 2%;
         border-radius: 30px;
       }
 
-      #demo > h3 {
+      #demo > h3,
+      #price > h3 {
         background-color: beige;
         position: relative;
         bottom: 12px;
@@ -129,6 +131,39 @@
         display: block;
         margin: auto;
         width: 60%;
+      }
+
+      #price-card-container {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .card {
+        border: 2px solid gray;
+        border-radius: 2px;
+        margin: 2% 1%;
+        flex: 1 1 0px;
+      }
+
+      .card > h5 {
+        background-color: gray;
+        margin: auto;
+        font-size: 20px;
+        box-sizing: border-box;
+        padding: 4%;
+      }
+
+      .card > h4 {
+        margin: auto;
+        font-size: 20px;
+        box-sizing: border-box;
+        padding: 4%;
+        border-bottom: 2px solid gray;
+      }
+
+      .card > p {
+        font-size: 17px;
+        font-weight: bold;
       }
 
       footer {
@@ -165,7 +200,7 @@
               required
               autocomplete="off"
             />
-            <button id="submit" type="submit">Send</button>
+            <button id="submit" class="submit" type="submit">Send</button>
           </form>
         </section>
         <section id="description">
@@ -262,7 +297,36 @@
             allowfullscreen=""
           ></iframe>
         </section>
-        <section id="price"></section>
+        <section id="price">
+          <h3>PRICE</h3>
+
+          <div id="price-card-container">
+            <div class="card">
+              <h5>PACKAGE ONE</h5>
+              <h4>$100</h4>
+              <p>Lorem, ipsum dolor.</p>
+              <p>Lorem ipsum dolor sit.</p>
+              <p>Lorem, ipsum dolor.</p>
+              <button class="submit" style="width: 25%">SELECT</button>
+            </div>
+            <div class="card">
+              <h5>PACKAGE TWO</h5>
+              <h4>$120</h4>
+              <p>Lorem, ipsum dolor.</p>
+              <p>Lorem ipsum dolor sit.</p>
+              <p>Lorem, ipsum dolor.</p>
+              <button class="submit" style="width: 25%">SELECT</button>
+            </div>
+            <div class="card">
+              <h5>PACKAGE THREE</h5>
+              <h4>$150</h4>
+              <p>Lorem, ipsum dolor.</p>
+              <p>Lorem ipsum dolor sit.</p>
+              <p>Lorem, ipsum dolor.</p>
+              <button class="submit" style="width: 25%">SELECT</button>
+            </div>
+          </div>
+        </section>
       </main>
       <footer>
         <p style="text-align: end">Created By DhirajB7</p>
