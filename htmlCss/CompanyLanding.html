@@ -62,9 +62,10 @@
         box-sizing: border-box;
       }
 
-      #form-section,#description{
-          text-align: center;
-          margin-bottom: 4%;
+      #form-section,
+      #description {
+        text-align: center;
+        margin-bottom: 4%;
       }
 
       #email {
@@ -88,8 +89,12 @@
       }
 
       #video{
-          width: 100%;
+          display: block;
+          margin: auto;
+          width: 60%;
+        
       }
+
       footer {
         grid-column: span 12;
         border-top: 1px solid gray;
@@ -128,50 +133,32 @@
           </form>
         </section>
         <section id="form-section">
-            <h1>Best in market, more details can be mailed</h1>
-            <form action=" https://www.freecodecamp.com/email-submit">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Enter your email here"
-                required
-                autocomplete="off"
-              />
-              <button id="submit" type="submit">Send</button>
-            </form>
-          </section>
-          <section id="form-section">
-            <h1>Best in market, more details can be mailed</h1>
-            <form action=" https://www.freecodecamp.com/email-submit">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Enter your email here"
-                required
-                autocomplete="off"
-              />
-              <button id="submit" type="submit">Send</button>
-            </form>
-          </section>
-          <section id="form-section">
-            <h1>Best in market, more details can be mailed</h1>
-            <form action=" https://www.freecodecamp.com/email-submit">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Enter your email here"
-                required
-                autocomplete="off"
-              />
-              <button id="submit" type="submit">Send</button>
-            </form>
-          </section>
+          <h1>Best in market, more details can be mailed</h1>
+          <form action=" https://www.freecodecamp.com/email-submit">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email here"
+              required
+              autocomplete="off"
+            />
+            <button id="submit" type="submit">Send</button>
+          </form>
+        </section>
+        <section id="demo">
+          <iframe
+            id="video"
+            height="320"
+            src="https://www.youtube-nocookie.com/embed/y8Yv4pnO7qc?rel=0&amp;controls=0&amp;showinfo=0"
+            frameborder="0"
+            allowfullscreen=""
+          ></iframe>
+        </section>
+        <section id="price"></section>
       </main>
       <footer>
-        <p style="text-align: end;">Created By DhirajB7</p>
+        <p style="text-align: end">Created By DhirajB7</p>
       </footer>
     </div>
   </body>
