@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Document</title>
+
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto;
+        grid-auto-rows: auto;
+      }
+
+      #navbar {
+        grid-column: span 4;
+        grid-row: auto;
+        border: 2px solid red;
+    }
+
+    #tec-doc{
+        text-align: center;
+    }
+
+    #navbar>ul{
+        list-style: none;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #main-doc {
+        grid-column: span 8;
+        grid-row: auto;
+        border: 2px solid blue;
+      }
+
+      @media screen and (max-width: 400px) {
+        #container {
+          display: grid;
+          grid-template-columns: auto;
+          grid-template-rows: auto auto;
+          grid-auto-rows: auto;
+        }
+        #navbar {
+          grid-column: auto;
+          border: 2px solid red;
+        }
+
+        #navbar>ul{
+        height: 20%;
+    }
+    
+
+        #main-doc {
+          grid-column: auto;
+          border: 2px solid blue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <nav id="navbar">
+        <header id="tec-doc">XYZ DOCUMENTATION</header>
+        <ul>
+          <li>Topic 1</li>
+          <li>Topic 2</li>
+          <li>Topic 3</li>
+          <li>Topic 4</li>
+          <li>Topic 5</li>
+          <li>Topic 6</li>
+          <li>Topic 7</li>
+          <li>Topic 8</li>
+          <li>Topic 9</li>
+          <li>Topic 10</li>
+        </ul>
+      </nav>
+      <main id="main-doc">
+        <section class="main-section" id="Topic_1"><header>Topic 1</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
+        <section class="main-section" id="Topic_2"><header>Topic 2</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. <ul><li>Lorem ipsum dolor sit amet consectetur.</li><li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, dolorem!</li></ul>Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
+        <section class="main-section" id="Topic_3"><header>Topic 3</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. <ul><li>Lorem ipsum dolor sit amet consectetur.</li><li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, dolorem!</li></ul>Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
+        <section class="main-section" id="Topic_4"><header>Topic 4</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. <ul><li>Lorem ipsum dolor sit amet consectetur.</li><li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, dolorem!</li></ul>Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
+        <section class="main-section" id="Topic_5"><header>Topic 5</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. <code>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, voluptate!</code>Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
+        <section class="main-section" id="Topic_6"><header>Topic 6</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. <code>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, voluptate!</code>Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
+        <section class="main-section" id="Topic_7"><header>Topic 7</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. <code>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, voluptate!</code>Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
+        <section class="main-section" id="Topic_8"><header>Topic 8</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. <code>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, voluptate!</code>Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
+        <section class="main-section" id="Topic_9"><header>Topic 9</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. <code>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, voluptate!</code>Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
+        <section class="main-section" id="Topic_10"><header>Topic 10</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
+      </main>
+    </div>
+  </body>
+</html>
