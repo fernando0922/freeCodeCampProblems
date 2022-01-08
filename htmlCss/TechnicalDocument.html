@@ -12,33 +12,58 @@
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: auto;
         grid-auto-rows: auto;
+        align-items: flex-start;
       }
 
       #navbar {
-        grid-column: span 4;
-        grid-row: auto;
-        border: 2px solid red;
+          grid-column: span 4;
+          grid-row: auto;
+          border: 2px solid gray;
     }
-
+    
     #tec-doc{
         text-align: center;
+        font-size: x-large;
+        font-weight: bold;
     }
 
+    .main-section > header {
+        font-size: x-large;
+        font-weight: bold;
+    }
+    
     #navbar>ul{
         list-style: none;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        padding: 0%;
     }
+
+    #navbar>ul>li {
+        text-align: center;
+        padding: 5% 0%;  
+        border-top: 1px solid gray ;
+        border-bottom: 1px solid gray ;
+    }
+
+
     
     #main-doc {
         grid-column: span 8;
         grid-row: auto;
-        border: 2px solid blue;
+        padding:4%
       }
 
-      @media screen and (max-width: 400px) {
+      a{
+          text-decoration: none;
+          color: black;
+      }
+
+      code{
+          background-color: bisque;
+          font-family: monospace;
+      }
+
+      @media screen and (max-width: 600px) {
         #container {
           display: grid;
           grid-template-columns: auto;
@@ -47,7 +72,6 @@
         }
         #navbar {
           grid-column: auto;
-          border: 2px solid red;
         }
 
         #navbar>ul{
@@ -57,8 +81,13 @@
 
         #main-doc {
           grid-column: auto;
-          border: 2px solid blue;
         }
+
+        #navbar>ul>li {
+            padding: 1% 0%;
+        }
+
+
       }
     </style>
   </head>
@@ -67,16 +96,21 @@
       <nav id="navbar">
         <header id="tec-doc">XYZ DOCUMENTATION</header>
         <ul>
-          <li>Topic 1</li>
-          <li>Topic 2</li>
-          <li>Topic 3</li>
-          <li>Topic 4</li>
-          <li>Topic 5</li>
-          <li>Topic 6</li>
-          <li>Topic 7</li>
-          <li>Topic 8</li>
-          <li>Topic 9</li>
-          <li>Topic 10</li>
+          <li><a class="nav-link" href="#Topic_1">Topic 1</a></li>
+          <li><a class="nav-link" href="#Topic_2">Topic 2</a></li>
+          <li><a class="nav-link" href="#Topic_3">Topic 3</a></li>
+          <li><a class="nav-link" href="#Topic_4">Topic 4</a></li>
+          <li><a class="nav-link" href="#Topic_5">Topic 5</a></li>
+          <li><a class="nav-link" href="#Topic_6">Topic 6</a></li>
+          <li><a class="nav-link" href="#Topic_7">Topic 7</a></li>
+          <li><a class="nav-link" href="#Topic_8">Topic 8</a></li>
+          <li><a class="nav-link" href="#Topic_9">Topic 9</a></li>
+          <li><a class="nav-link" href="#Topic_10">Topic 10</a></li>
+          <li><a class="nav-link" href="#Topic_11">Topic 11</a></li>
+          <li><a class="nav-link" href="#Topic_12">Topic 12</a></li>
+          <li><a class="nav-link" href="#Topic_13">Topic 13</a></li>
+          <li><a class="nav-link" href="#Topic_14">Topic 14</a></li>
+          <li><a class="nav-link" href="#Topic_15">Topic 15</a></li>
         </ul>
       </nav>
       <main id="main-doc">
@@ -89,7 +123,12 @@
         <section class="main-section" id="Topic_7"><header>Topic 7</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. <code>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, voluptate!</code>Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
         <section class="main-section" id="Topic_8"><header>Topic 8</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. <code>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, voluptate!</code>Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
         <section class="main-section" id="Topic_9"><header>Topic 9</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. <code>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, voluptate!</code>Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
-        <section class="main-section" id="Topic_10"><header>Topic 10</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel!</p></article></section>
+        <section class="main-section" id="Topic_10"><header>Topic 10</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, reprehenderit tempora labore quod totam at, sapiente deserunt repellat voluptatum libero dignissimos in recusandae reiciendis! Perspiciatis perferendis, consequuntur omnis itaque necessitatibus nisi cumque soluta temporibus quis molestiae voluptates sint vel eaque iure similique maxime sed tenetur commodi officia inventore provident. Dolores minus, consequuntur, totam sapiente saepe doloribus non nam facilis, voluptates quis corporis et suscipit est. Reprehenderit eos quo animi est sit doloremque accusamus molestiae numquam culpa adipisci aut nesciunt magni quis natus porro non temporibus fuga libero facere omnis possimus, veniam cupiditate mollitia exercitationem. Labore alias nihil ad? Officia, quibusdam.</p></article></section>
+        <section class="main-section" id="Topic_11"><header>Topic 11</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, reprehenderit tempora labore quod totam at, sapiente deserunt repellat voluptatum libero dignissimos in recusandae reiciendis! Perspiciatis perferendis, consequuntur omnis itaque necessitatibus nisi cumque soluta temporibus quis molestiae voluptates sint vel eaque iure similique maxime sed tenetur commodi officia inventore provident. Dolores minus, consequuntur, totam sapiente saepe doloribus non nam facilis, voluptates quis corporis et suscipit est. Reprehenderit eos quo animi est sit doloremque accusamus molestiae numquam culpa adipisci aut nesciunt magni quis natus porro non temporibus fuga libero facere omnis possimus, veniam cupiditate mollitia exercitationem. Labore alias nihil ad? Officia, quibusdam.</p></article></section>
+        <section class="main-section" id="Topic_12"><header>Topic 12</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, reprehenderit tempora labore quod totam at, sapiente deserunt repellat voluptatum libero dignissimos in recusandae reiciendis! Perspiciatis perferendis, consequuntur omnis itaque necessitatibus nisi cumque soluta temporibus quis molestiae voluptates sint vel eaque iure similique maxime sed tenetur commodi officia inventore provident. Dolores minus, consequuntur, totam sapiente saepe doloribus non nam facilis, voluptates quis corporis et suscipit est. Reprehenderit eos quo animi est sit doloremque accusamus molestiae numquam culpa adipisci aut nesciunt magni quis natus porro non temporibus fuga libero facere omnis possimus, veniam cupiditate mollitia exercitationem. Labore alias nihil ad? Officia, quibusdam.</p></article></section>
+        <section class="main-section" id="Topic_13"><header>Topic 13</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, reprehenderit tempora labore quod totam at, sapiente deserunt repellat voluptatum libero dignissimos in recusandae reiciendis! Perspiciatis perferendis, consequuntur omnis itaque necessitatibus nisi cumque soluta temporibus quis molestiae voluptates sint vel eaque iure similique maxime sed tenetur commodi officia inventore provident. Dolores minus, consequuntur, totam sapiente saepe doloribus non nam facilis, voluptates quis corporis et suscipit est. Reprehenderit eos quo animi est sit doloremque accusamus molestiae numquam culpa adipisci aut nesciunt magni quis natus porro non temporibus fuga libero facere omnis possimus, veniam cupiditate mollitia exercitationem. Labore alias nihil ad? Officia, quibusdam.</p></article></section>
+        <section class="main-section" id="Topic_14"><header>Topic 14</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, reprehenderit tempora labore quod totam at, sapiente deserunt repellat voluptatum libero dignissimos in recusandae reiciendis! Perspiciatis perferendis, consequuntur omnis itaque necessitatibus nisi cumque soluta temporibus quis molestiae voluptates sint vel eaque iure similique maxime sed tenetur commodi officia inventore provident. Dolores minus, consequuntur, totam sapiente saepe doloribus non nam facilis, voluptates quis corporis et suscipit est. Reprehenderit eos quo animi est sit doloremque accusamus molestiae numquam culpa adipisci aut nesciunt magni quis natus porro non temporibus fuga libero facere omnis possimus, veniam cupiditate mollitia exercitationem. Labore alias nihil ad? Officia, quibusdam.</p></article></section>
+        <section class="main-section" id="Topic_15"><header>Topic 15</header><article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laboriosam debitis aspernatur earum nihil laudantium nemo quas, harum maiores reiciendis dolore quod aperiam. Sunt possimus delectus sequi minima. Voluptatum ullam ratione expedita laboriosam error animi, corrupti soluta eius repellendus doloribus earum, possimus aliquam ipsum nam delectus autem optio sint exercitationem neque nihil iusto assumenda. Quam ad nam ipsam, beatae eaque odit illo illum quo! Soluta itaque iure unde est saepe corrupti. Quibusdam quam harum voluptates! Maiores nemo error assumenda officiis repellendus expedita repudiandae, odit saepe iusto provident in eaque minus cum veniam inventore, nesciunt iure alias reprehenderit vitae voluptatibus. Vel! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, reprehenderit tempora labore quod totam at, sapiente deserunt repellat voluptatum libero dignissimos in recusandae reiciendis! Perspiciatis perferendis, consequuntur omnis itaque necessitatibus nisi cumque soluta temporibus quis molestiae voluptates sint vel eaque iure similique maxime sed tenetur commodi officia inventore provident. Dolores minus, consequuntur, totam sapiente saepe doloribus non nam facilis, voluptates quis corporis et suscipit est. Reprehenderit eos quo animi est sit doloremque accusamus molestiae numquam culpa adipisci aut nesciunt magni quis natus porro non temporibus fuga libero facere omnis possimus, veniam cupiditate mollitia exercitationem. Labore alias nihil ad? Officia, quibusdam.</p></article></section>
       </main>
     </div>
   </body>
