@@ -5,12 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
 
     <style>
       :root {
@@ -21,7 +18,7 @@
       }
 
       body {
-        font-family: "Moon Dance", cursive;
+        font-family: 'Raleway', sans-serif;
       }
       #navbar {
         position: fixed;
@@ -43,6 +40,7 @@
         text-transform: uppercase;
         font-weight: bold;
         margin-right: 5%;
+        font-size: 21px;
       }
 
       li > a {
@@ -54,6 +52,27 @@
         height: 100vh;
         background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
         margin: 0px -8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding:2%
+      }
+      #welcome-section>h2{
+          color: var(--main-white);
+          font-size: 2rem;
+          margin: 0px;
+        }
+        #welcome-section>h1{
+            color: var(--main-red);
+            font-size: 3rem;
+            margin: 0px;
+      }
+      #welcome-section>p{
+            color: var(--main-white);
+            font-size: 2rem;
+            margin: 0px;
+            text-align: center;
       }
       #projects {
         height: 100vh;
@@ -81,7 +100,11 @@
       </ul>
     </nav>
 
-    <section id="welcome-section"></section>
+    <section id="welcome-section">
+        <h2>Hello, my name is </h2>
+        <h1>DHIRAJ</h1>
+        <p>Working as web developer, Don't hesitate to navigate this portfolio, Cheers &#127866;</p>
+    </section>
     <section id="projects"></section>
     <section id="contact"></section>
 
