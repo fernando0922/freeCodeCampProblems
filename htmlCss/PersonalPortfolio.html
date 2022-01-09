@@ -78,7 +78,6 @@
         text-align: center;
       }
       #projects {
-        height: 100vh;
         background-color: var(--main-blue);
         margin: 0px -8px;
         padding: 2%;
@@ -96,13 +95,28 @@
           display: grid;
           margin-top:10%;
           grid-template-columns: repeat(12,1fr);
+          align-items: center;
           gap: 20px 10px;
         }
 
-        #project-container > a {
+        .project-tile {
             display: block;
             grid-column: span 4;
-            border:2px solid red;
+            border:2px solid var(--main-gray);
+            text-decoration: none;
+        }
+
+        .project-image{
+          width: -webkit-fill-available;
+          background-color: var(--main-gray);
+        }
+
+        .project-title{
+          background-color: var(--main-gray);
+          margin: -4px auto 0px;
+          text-align: center;
+          color: var(--main-red);
+          padding:4% 0%;
         }
 
       @media screen and (min-width: 320px) and (max-width: 480px) {
@@ -186,52 +200,60 @@
         >
           <img
             class="project-image"
-            src=""
+            src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/tribute.PNG?raw=true"
             alt="project"
           /> 
           <p class="project-title">
-            <span class="code">&lt;</span>
             Tribute Page
-            <span class="code">/&gt;</span>
           </p>
         </a>
 
         <a
-          href="https://codepen.io/DhirajB7/full/bGRwOwL"
+          href="https://codepen.io/DhirajB7/full/RwLywzY"
           target="_blank"
           class="project-tile"
         >
-         
+          <img
+            class="project-image"
+            src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/survay.PNG?raw=true"
+            alt="project"
+          /> 
           <p class="project-title">
-            <span class="code">&lt;</span>
-            Tribute Page
-            <span class="code">/&gt;</span>
+            Survey Form
           </p>
         </a>
+
         <a
-          href="https://codepen.io/DhirajB7/full/bGRwOwL"
+          href="https://codepen.io/DhirajB7/full/zYEjjzd"
           target="_blank"
           class="project-tile"
         >
-         
+          <img
+            class="project-image"
+            src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/product.PNG?raw=true"
+            alt="project"
+          /> 
           <p class="project-title">
-            <span class="code">&lt;</span>
-            Tribute Page
-            <span class="code">/&gt;</span>
+            Product Document
           </p>
         </a>
+
         <a
-          href="https://codepen.io/DhirajB7/full/bGRwOwL"
+          href="https://codepen.io/DhirajB7/full/abLazmN"
           target="_blank"
           class="project-tile"
         >
-         
+          <img
+            class="project-image"
+            src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/techDocument.PNG?raw=true"
+            alt="project"
+          /> 
           <p class="project-title">
-            <span class="code">&lt;</span>
-            Tribute Page
-            <span class="code">/&gt;</span>
+            Technical Documentation
           </p>
         </a>
+        
+
       </div>
     </section>
     <section id="contact"></section>
