@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       :root {
@@ -18,7 +21,7 @@
       }
 
       body {
-        font-family: 'Raleway', sans-serif;
+        font-family: "Raleway", sans-serif;
       }
       #navbar {
         position: fixed;
@@ -56,29 +59,93 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding:2%
+        padding: 2%;
       }
-      #welcome-section>h2{
-          color: var(--main-white);
-          font-size: 2rem;
-          margin: 0px;
-        }
-        #welcome-section>h1{
-            color: var(--main-red);
-            font-size: 3rem;
-            margin: 0px;
+      #welcome-section > h2 {
+        color: var(--main-white);
+        font-size: 2rem;
+        margin: 0px;
       }
-      #welcome-section>p{
-            color: var(--main-white);
-            font-size: 2rem;
-            margin: 0px;
-            text-align: center;
+      #welcome-section > h1 {
+        color: var(--main-red);
+        font-size: 3rem;
+        margin: 0px;
+      }
+      #welcome-section > p {
+        color: var(--main-white);
+        font-size: 2rem;
+        margin: 0px;
+        text-align: center;
       }
       #projects {
         height: 100vh;
         background-color: var(--main-blue);
         margin: 0px -8px;
+        padding: 2%;
+        box-sizing: border-box;
       }
+      #projects > h2 {
+        margin: 0%;
+        color: var(--main-white);
+        text-align: center;
+        text-decoration: underline;
+        font-size: 3rem;
+      }
+
+      #project-container{
+          display: grid;
+          margin-top:10%;
+          grid-template-columns: repeat(12,1fr);
+          gap: 20px 10px;
+        }
+
+        #project-container > a {
+            display: block;
+            grid-column: span 4;
+            border:2px solid red;
+        }
+
+      @media screen and (min-width: 320px) and (max-width: 480px) {
+        #projects > h2 {
+          padding-top: 28%;
+        }
+
+        #project-container > a {
+            grid-column: span 12;
+        }
+      }
+
+      @media screen and (min-width: 481px) and (max-width: 768px) {
+        #projects > h2 {
+          padding-top: 14%;
+        }
+        
+        #project-container > a {
+            grid-column: span 6;
+        }
+      }
+
+      @media screen and (min-width: 769px) and (max-width: 1024px) {
+        #projects > h2 {
+          padding-top: 13%;
+        }
+        
+        #project-container > a {
+            grid-column: span 4;
+        }
+        
+      }
+
+      @media screen and (min-width: 1025px) {
+        #projects > h2 {
+          padding-top: 8%;
+        }
+
+        #project-container > a {
+            grid-column: span 4;
+        }
+      }
+
       #contact {
         height: 80vh;
         background-color: var(--main-gray);
@@ -101,11 +168,72 @@
     </nav>
 
     <section id="welcome-section">
-        <h2>Hello, my name is </h2>
-        <h1>DHIRAJ</h1>
-        <p>Working as web developer, Don't hesitate to navigate this portfolio, Cheers &#127866;</p>
+      <h2>Hello, my name is</h2>
+      <h1>DHIRAJ</h1>
+      <p>
+        Working as web developer, Don't hesitate to navigate this portfolio,
+        Cheers &#127866;
+      </p>
     </section>
-    <section id="projects"></section>
+    <section id="projects">
+      <h2>These are some of my projects</h2>
+
+      <div id="project-container">
+        <a
+          href="https://codepen.io/DhirajB7/full/bGRwOwL"
+          target="_blank"
+          class="project-tile"
+        >
+          <!-- <img
+            class="project-image"
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg"
+            alt="project"
+          /> -->
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Tribute Page
+            <span class="code">/&gt;</span>
+          </p>
+        </a>
+
+        <a
+          href="https://codepen.io/DhirajB7/full/bGRwOwL"
+          target="_blank"
+          class="project-tile"
+        >
+         
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Tribute Page
+            <span class="code">/&gt;</span>
+          </p>
+        </a>
+        <a
+          href="https://codepen.io/DhirajB7/full/bGRwOwL"
+          target="_blank"
+          class="project-tile"
+        >
+         
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Tribute Page
+            <span class="code">/&gt;</span>
+          </p>
+        </a>
+        <a
+          href="https://codepen.io/DhirajB7/full/bGRwOwL"
+          target="_blank"
+          class="project-tile"
+        >
+         
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Tribute Page
+            <span class="code">/&gt;</span>
+          </p>
+        </a>
+      </div>
+    </section>
     <section id="contact"></section>
 
     <footer id="footer"></footer>
