@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --main-white: #f0f0f0;
+        --main-red: #be3144;
+        --main-blue: #45567d;
+        --main-gray: #303841;
+      }
+
+      body {
+        font-family: "Moon Dance", cursive;
+      }
+      #navbar {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        height: 10%;
+        width: 100%;
+        background-color: var(--main-red);
+      }
+
+      ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      li {
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-right: 5%;
+      }
+
+      li > a {
+        text-decoration: none;
+        color: var(--main-white);
+      }
+
+      #welcome-section {
+        height: 100vh;
+        background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+        margin: 0px -8px;
+      }
+      #projects {
+        height: 100vh;
+        background-color: var(--main-blue);
+        margin: 0px -8px;
+      }
+      #contact {
+        height: 80vh;
+        background-color: var(--main-gray);
+        margin: 0px -8px;
+      }
+      #footer {
+        height: 20vh;
+        background-color: var(--main-gray);
+        margin: 0px -8px -8px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#welcome-section">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section id="welcome-section"></section>
+    <section id="projects"></section>
+    <section id="contact"></section>
+
+    <footer id="footer"></footer>
+  </body>
+</html>
