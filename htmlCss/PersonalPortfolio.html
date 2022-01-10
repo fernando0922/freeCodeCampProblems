@@ -91,33 +91,37 @@
         font-size: 3rem;
       }
 
-      #project-container{
-          display: grid;
-          margin-top:10%;
-          grid-template-columns: repeat(12,1fr);
-          align-items: center;
-          gap: 20px 10px;
-        }
+      #project-container {
+        display: grid;
+        margin-top: 10%;
+        grid-template-columns: repeat(12, 1fr);
+        align-items: center;
+        gap: 20px 10px;
+      }
 
-        .project-tile {
-            display: block;
-            grid-column: span 4;
-            border:2px solid var(--main-gray);
-            text-decoration: none;
-        }
+      .project-tile {
+        display: block;
+        grid-column: span 4;
+        border: 2px solid var(--main-gray);
+        text-decoration: none;
+      }
 
-        .project-image{
-          width: -webkit-fill-available;
-          background-color: var(--main-gray);
-        }
+      .project-image {
+        width: -webkit-fill-available;
+        background-color: var(--main-gray);
+      }
 
-        .project-title{
-          background-color: var(--main-gray);
-          margin: -4px auto 0px;
-          text-align: center;
-          color: var(--main-red);
-          padding:4% 0%;
-        }
+      .project-title {
+        background-color: var(--main-gray);
+        margin: -4px auto 0px;
+        text-align: center;
+        color: var(--main-red);
+        padding: 4% 0%;
+      }
+
+      .project-title:hover {
+        color: orangered;
+      }
 
       @media screen and (min-width: 320px) and (max-width: 480px) {
         #projects > h2 {
@@ -125,7 +129,7 @@
         }
 
         #project-container > a {
-            grid-column: span 12;
+          grid-column: span 12;
         }
       }
 
@@ -133,9 +137,9 @@
         #projects > h2 {
           padding-top: 14%;
         }
-        
+
         #project-container > a {
-            grid-column: span 6;
+          grid-column: span 6;
         }
       }
 
@@ -143,11 +147,10 @@
         #projects > h2 {
           padding-top: 13%;
         }
-        
+
         #project-container > a {
-            grid-column: span 4;
+          grid-column: span 4;
         }
-        
       }
 
       @media screen and (min-width: 1025px) {
@@ -156,7 +159,7 @@
         }
 
         #project-container > a {
-            grid-column: span 4;
+          grid-column: span 4;
         }
       }
 
@@ -202,10 +205,8 @@
             class="project-image"
             src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/tribute.PNG?raw=true"
             alt="project"
-          /> 
-          <p class="project-title">
-            Tribute Page
-          </p>
+          />
+          <p class="project-title">Tribute Page</p>
         </a>
 
         <a
@@ -217,10 +218,8 @@
             class="project-image"
             src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/survay.PNG?raw=true"
             alt="project"
-          /> 
-          <p class="project-title">
-            Survey Form
-          </p>
+          />
+          <p class="project-title">Survey Form</p>
         </a>
 
         <a
@@ -232,10 +231,8 @@
             class="project-image"
             src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/product.PNG?raw=true"
             alt="project"
-          /> 
-          <p class="project-title">
-            Product Document
-          </p>
+          />
+          <p class="project-title">Product Document</p>
         </a>
 
         <a
@@ -247,13 +244,113 @@
             class="project-image"
             src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/techDocument.PNG?raw=true"
             alt="project"
-          /> 
-          <p class="project-title">
-            Technical Documentation
-          </p>
+          />
+          <p class="project-title">Technical Documentation</p>
         </a>
-        
 
+        <a
+          href="https://github.com/DhirajB7/UserProjectFrontend"
+          target="_blank"
+          class="project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/empMng.png?raw=true"
+            alt="project"
+          />
+          <p class="project-title">Employee Management</p>
+        </a>
+
+        <a
+          href="https://github.com/DhirajB7/gmate"
+          target="_blank"
+          class="project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/gmate.jpeg?raw=true"
+            alt="project"
+          />
+          <p class="project-title">GMATE SCORE APP</p>
+        </a>
+
+        <a
+          href="https://github.com/DhirajB7/ImageSearch"
+          target="_blank"
+          class="project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/imageSearch.jpeg?raw=true"
+            alt="project"
+          />
+          <p class="project-title">Image Search</p>
+        </a>
+
+        <a
+          href="https://github.com/DhirajB7/MemeGenerator"
+          target="_blank"
+          class="project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/meme.jpeg?raw=true"
+            alt="project"
+          />
+          <p class="project-title">MEME GENERATOR</p>
+        </a>
+
+        <a
+          href="https://github.com/DhirajB7/NutrifyMeFrontEnd"
+          target="_blank"
+          class="project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/nutrify.jpeg?raw=true"
+            alt="project"
+          />
+          <p class="project-title">Nutrify Me Frontend</p>
+        </a>
+
+        <a
+          href="https://github.com/DhirajB7/Press_A_Key"
+          target="_blank"
+          class="project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/pak.png?raw=true"
+            alt="project"
+          />
+          <p class="project-title">PAT A KEY</p>
+        </a>
+
+        <a
+          href="https://github.com/DhirajB7/fun-RGB-game"
+          target="_blank"
+          class="project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/rgbGame.jpeg?raw=true"
+            alt="project"
+          />
+          <p class="project-title">RGB GAME</p>
+        </a>
+
+        <a
+          href="https://github.com/DhirajB7/TwoPlayerScoreKeeping"
+          target="_blank"
+          class="project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://github.com/DhirajB7/freeCodeCampProblems/blob/main/images/scoreKeeping.jpeg?raw=true"
+            alt="project"
+          />
+          <p class="project-title">Score Keeping</p>
+        </a>
       </div>
     </section>
     <section id="contact"></section>
