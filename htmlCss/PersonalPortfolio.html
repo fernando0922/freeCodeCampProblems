@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio</title>
-    <script src="https://kit.fontawesome.com/dbe0d25417.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/dbe0d25417.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,6 +41,8 @@
         list-style-type: none;
         display: flex;
         justify-content: flex-end;
+        height: -webkit-fill-available;
+        align-items: center;
       }
 
       li {
@@ -78,6 +83,35 @@
         margin: 0px;
         text-align: center;
       }
+
+      #beer{
+        display: inline-block;
+        cursor: pointer;
+        font-size: 2.5rem;
+      }
+      
+      @keyframes shake {
+        0%{
+            transform: skewX(5deg);
+          }
+          
+          25%{
+            transform: skewX(2.5deg);
+          }
+          
+          50%{
+            transform: skewX(-2.5deg);
+          }
+          
+          100%{
+            transform: skewX(-5deg);
+        }
+      }
+      
+      #beer:hover{
+        animation: shake 1s ease-in-out 0s infinite alternate-reverse;
+      }
+
       #projects {
         background-color: var(--main-blue);
         margin: 0px -8px;
@@ -124,11 +158,11 @@
         color: orangered;
       }
 
-      #footer{
+      #footer {
         border-top: 4px solid var(--main-red);
       }
 
-      #footer > p{
+      #footer > p {
         font-size: large;
         margin: 0px;
         position: relative;
@@ -187,17 +221,17 @@
         justify-content: center;
       }
 
-      .contact-main{
+      .contact-main {
         text-align: center;
       }
 
-      .contact-main > h1{
+      .contact-main > h1 {
         color: var(--main-white);
         font-size: 3rem;
         font-weight: bold;
       }
 
-      .contact-main > p{
+      .contact-main > p {
         color: var(--main-white);
         font-weight: bold;
         font-size: 1.5rem;
@@ -205,7 +239,7 @@
         right: 3%;
       }
 
-      .contact-link{
+      .contact-link {
         display: flex;
         width: 100%;
         justify-content: center;
@@ -224,17 +258,16 @@
       }
 
       @keyframes bounce {
-        0%{
-          color:var(--main-red)
+        0% {
+          color: var(--main-red);
         }
-        50%{
+        50% {
           color: var(--main-blue);
         }
-        100%{
-          color:var(--main-white)
+        100% {
+          color: var(--main-white);
         }
       }
-    
 
       #footer {
         height: 20vh;
@@ -257,7 +290,7 @@
       <h1>DHIRAJ</h1>
       <p>
         Working as web developer, Don't hesitate to navigate this portfolio,
-        Cheers &#127866;
+        Cheers <span id="beer">&#127866;</span>
       </p>
     </section>
     <section id="projects">
@@ -427,11 +460,21 @@
         <p>ways to reach me</p>
       </div>
       <div class="contact-link">
-        <a href="https://www.linkedin.com/in/dhirajb7/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a id="profile-link" href="https://github.com/DhirajB7" target="_blank"><i class="fab fa-github-alt"></i></a>
-        <a href="https://wa.me/918880093594" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:+91-8880093594" target="_blank"><i class="fas fa-mobile-alt"></i></a>
-        <a href="mailto:dhiraj.basavaraju@gmail.com" target="_blank"><i class="fas fa-at"></i></a>
+        <a href="https://www.linkedin.com/in/dhirajb7/" target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a id="profile-link" href="https://github.com/DhirajB7" target="_blank"
+          ><i class="fab fa-github-alt"></i
+        ></a>
+        <a href="https://wa.me/918880093594" target="_blank"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+        <a href="tel:+91-8880093594" target="_blank"
+          ><i class="fas fa-mobile-alt"></i
+        ></a>
+        <a href="mailto:dhiraj.basavaraju@gmail.com" target="_blank"
+          ><i class="fas fa-at"></i
+        ></a>
       </div>
     </section>
 
