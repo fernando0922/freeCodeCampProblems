@@ -1,46 +1,54 @@
-body{
-
-  background-color: #C2C2D6 !important;
-
+body {
+  background-color: #c2c2d6 !important;
 }
 
-#root{
+#root {
   height: 90vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-
+  flex-direction: column;
 }
 
-#container{
+#container {
   width: 40rem;
   height: 30rem;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-template-rows: repeat(6,1fr);
-  gap:10px 10px
-
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 10px 10px;
+  border: 1px solid blueviolet;
+  padding: 2%;
 }
 
-.cal-component{
+.cal-component {
   border: 2px solid black;
+  border-radius: 5px;
   font-size: 2rem !important;
 }
 
-#display{
+#display {
   grid-column: span 4;
   align-self: center;
   text-align: right;
 }
 
-#clear{
+#clear {
   grid-column: span 2;
 }
 
-#zero{
+#zero {
   grid-column: span 2;
 }
 
-#equals{
+#equals {
   grid-row: span 2;
+}
+
+@media screen and (max-width:666px) {
+  
+  #container {
+    width: auto !important;
+  }
+
 }
