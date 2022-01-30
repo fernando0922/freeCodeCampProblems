@@ -1,0 +1,46 @@
+body{
+
+  background-color: #C2C2D6 !important;
+
+}
+
+#root{
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#container{
+  width: 40rem;
+  height: 30rem;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(6,1fr);
+  gap:10px 10px
+
+}
+
+.cal-component{
+  border: 2px solid black;
+  font-size: 2rem !important;
+}
+
+#display{
+  grid-column: span 4;
+  align-self: center;
+  text-align: right;
+}
+
+#clear{
+  grid-column: span 2;
+}
+
+#zero{
+  grid-column: span 2;
+}
+
+#equals{
+  grid-row: span 2;
+}
