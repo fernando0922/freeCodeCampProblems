@@ -55,17 +55,26 @@ const bankOne = [
   },
 ];
 
-const buttonClicked = ({ url, id }) => {
-  new Audio(url).play();
-  console.log(id);
-};
-
-const { useState, useContext } = React;
-
+const { useState, useContext, useEffect } = React;
 
 const App = () => {
-    return (
-        <div id="container">
+
+    
+  useEffect(() => {
+    const listen = (e) => {
+      const btn = document.getElementById(String(e.key).toUpperCase())
+      if(btn){
+          btn.click()
+      }
+    };
+    window.addEventListener("keydown", listen);
+    return () => {
+      window.removeEventListener("keydown", listen);
+    };
+  }, []);
+
+  return (
+    <div id="container">
       <DrumMachine />
     </div>
   );
@@ -102,16 +111,18 @@ const Keys = ({ music }) => {
 
 const Key = (props) => {
   const tc = useContext(TextContext);
+
+  const buttonClick = ({ url, id }) => {
+    new Audio(url).play();
+    tc.setMusicId(id);
+  };
   return (
     <button
       id={props.data.keyTrigger}
       className="drum-pad"
       key={props.data.keyTrigger}
       value={props.data.keyTrigger}
-      onClick={() => {
-        new Audio(props.data.url).play();
-        tc.setMusicId(props.data.id)
-      }}
+      onClick={() => buttonClick({url:props.data.url,id:props.data.id})}
     >
       {props.data.keyTrigger}
     </button>
