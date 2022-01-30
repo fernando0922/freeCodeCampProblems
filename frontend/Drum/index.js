@@ -58,13 +58,11 @@ const bankOne = [
 const { useState, useContext, useEffect } = React;
 
 const App = () => {
-
-    
   useEffect(() => {
     const listen = (e) => {
-      const btn = document.getElementById(String(e.key).toUpperCase())
-      if(btn){
-          btn.click()
+      const btn = document.getElementById(String(e.key).toUpperCase());
+      if (btn) {
+        btn.click();
       }
     };
     window.addEventListener("keydown", listen);
@@ -112,18 +110,25 @@ const Keys = ({ music }) => {
 const Key = (props) => {
   const tc = useContext(TextContext);
 
-  const buttonClick = ({ url, id }) => {
-    new Audio(url).play();
+  const buttonClick = ({ key, id }) => {
+    const sound = document.getElementById(key);
+    sound.currentTime = 0;
+    sound.play();
     tc.setMusicId(id);
   };
   return (
     <button
-      id={props.data.keyTrigger}
+      id={"button"+props.data.keyTrigger}
       className="drum-pad"
       key={props.data.keyTrigger}
       value={props.data.keyTrigger}
-      onClick={() => buttonClick({url:props.data.url,id:props.data.id})}
+      onClick={() => buttonClick({ key: props.data.keyTrigger, id: props.data.id })}
     >
+      <audio
+        className="clip"
+        id={props.data.keyTrigger}
+        src={props.data.url}
+      />
       {props.data.keyTrigger}
     </button>
   );
