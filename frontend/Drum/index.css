@@ -1,0 +1,42 @@
+body {
+  background-color: #8d8d8d;
+}
+
+#container {
+  height: 90vh;
+}
+
+#drum-machine {
+  position: relative;
+  top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#keys{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 1rem;
+    column-gap: 1rem;
+}
+
+.drum-pad{
+    background-color: #b3b3b3;
+    border-radius: 10px;
+    font-size: 5rem;
+}
+
+.drum-pad:hover{
+    cursor: pointer;
+    animation: click 1s linear 0s infinite forwards;
+}
+
+@keyframes click {
+    0%   {background-color: #b3b3b3;}
+    25%  {background-color: rgb(150, 235, 150);}
+    50%  {background-color: rgb(144, 133, 236);}
+    100% {background-color: #b3b3b3;}
+  }
+
