@@ -1,16 +1,17 @@
 const numToTime = (num) => {
-  const min = String(num/60).length===1 ? "0"+String(num/60) : String(num/60)
-  const sec = String(num%60).length===1 ? "0"+String(num%60) : String(num%60)
-  return `${min}:${sec}`
-}
+  const min =
+    String(num / 60).length === 1 ? "0" + String(num / 60) : String(num / 60);
+  const sec =
+    String(num % 60).length === 1 ? "0" + String(num % 60) : String(num % 60);
+  return `${min}:${sec}`;
+};
 
-const { useState, useEffect, useContext, useReducer } = React;
+const { useState, useEffect, useReducer } = React;
 
 const init = {
   break: 5,
   session: 25,
-  breakActive:true,
-  sessionActive:false
+  play: false,
 };
 
 const reducer = (state, action) => {
@@ -31,6 +32,8 @@ const reducer = (state, action) => {
       return state.session > 1 && state.session < 60
         ? { ...state, session: state.session - 1 }
         : state;
+    case "play":
+      return { ...state, play: !state.play };
     default:
       return init;
   }
@@ -58,14 +61,22 @@ const BreakSession = ({ state, dispatch }) => {
 };
 
 const Countdown = ({ state, dispatch }) => {
+  const [timeInSec, setTimeInSec] = useState(state.session);
+
+  useEffect(() => {
+    console.log("I WILL WORK NOW");
+  }, [state.play]);
+
   return (
     <>
       <div>
         <p>HEADING</p>
-        <h1>{state.sessionActive ? numToTime(state.session*60) : numToTime(state.break*60)}</h1>
+        <h1>{numToTime(timeInSec*60)}</h1>
       </div>
       <div>
-        <button>PLAY / PAUSE</button>
+        <button onClick={() => dispatch("play")}>
+          {state.play ? "PAUSE" : "PLAY"}
+        </button>
         <button onClick={() => dispatch("reset")}>RESET</button>
       </div>
     </>
