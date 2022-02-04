@@ -1,0 +1,37 @@
+#root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height:80vh;
+}
+
+.b-s{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.c-c{
+    display: flex;
+    flex-direction: column;
+    width:50%;
+}
+
+#break-label{
+
+    text-align: center;
+    
+}
+
+#session-label{
+    
+    text-align: center;
+
+}
+
+#b-s-c{
+    display: flex;
+    margin: 3% 0%;
+    width: 25%;
+    justify-content:space-evenly;
+}
