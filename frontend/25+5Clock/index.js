@@ -17,13 +17,12 @@ const checkIncDecValue = (data, val) => {
   return num >= 1 && num < 60;
 };
 
-const { useState, useEffect, useReducer } = React;
+const { useState, useEffect, useReducer, useRef } = React;
 
 const init = {
-  break: { init: 3, cur: 3, active: false },
-  session: { init: 5, cur: 5, active: true },
-  play: false,
-  audio:false
+  break: { init: 10, cur: 10, active: false },
+  session: { init: 10, cur: 10, active: true },
+  play: false
 };
 
 const reducer = (state, action) => {
@@ -82,23 +81,23 @@ const reducer = (state, action) => {
       return state;
     }
     case "breakSub":
-      return { ...state,audio:false, break: { ...state.break, cur: state.break.cur - 1 } };
+      return { ...state, break: { ...state.break, cur: state.break.cur - 1 } };
     case "sessonSub":
       return {
-        ...state,audio:false,
+        ...state,
         session: { ...state.session, cur: state.session.cur - 1 },
       };
     case "activeBreak":
       return {
-        ...state,audio:true,
+        ...state,
         break: { ...state.break, cur: state.break.init, active: true },
-        session: { ...state.session, active: false },
+        session: { ...state.session,cur:state.session.init, active: false },
       };
     case "activeSession":
       return {
-        ...state,audio:true,
+        ...state,
         session: { ...state.session, cur: state.session.init, active: true },
-        break: { ...state.break, active: false },
+        break: { ...state.break,cur: state.break.init, active: false },
       };
     case "play":
       return { ...state, play: !state.play };
@@ -110,17 +109,13 @@ const reducer = (state, action) => {
 const App = () => {
   const [state, dispatch] = useReducer(reducer, init);
 
+  console.log(state.session, state.break );
+
   return (
     <>
       <Heading state={state} dispatch={dispatch} />
       <BreakSession state={state} dispatch={dispatch} />
       <Countdown state={state} dispatch={dispatch} />
-       <audio
-        hidden
-        id="beep"
-        controls
-        src={"https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"}
-      />
     </>
   );
 };
@@ -135,15 +130,22 @@ const BreakSession = ({ state, dispatch }) => {
 };
 
 const Countdown = ({ state, dispatch }) => {
+
+
+  const aref = useRef();
+  
+
   useEffect(() => {
     if (state.play) {
       if (state.session.active && state.session.cur === -1) {
-        document.getElementById("beep").play()
-        dispatch("activeBreak");
+       aref.current.play()
+       console.log("=======================");
+       dispatch("activeBreak");
       }
       
       if (state.break.active && state.break.cur === -1) {
-        document.getElementById("beep").play()
+        aref.current.play()
+        console.log("=======================");
         dispatch("activeSession");
       }
 
@@ -156,6 +158,13 @@ const Countdown = ({ state, dispatch }) => {
   return (
     <>
     
+    <audio
+        ref={aref}
+        hidden
+        id="beep"
+        controls
+        src={"https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"}
+      />
       <div>
         <p>{state.session.active ? "SESSION" : "BREAK"}</p>
         <h1>
