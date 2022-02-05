@@ -20,9 +20,10 @@ const checkIncDecValue = (data, val) => {
 const { useState, useEffect, useReducer } = React;
 
 const init = {
-  break: { init: 300, cur: 300, active: false },
-  session: { init: 1500, cur: 1500, active: true },
+  break: { init: 3, cur: 3, active: false },
+  session: { init: 5, cur: 5, active: true },
   play: false,
+  audio:false
 };
 
 const reducer = (state, action) => {
@@ -81,21 +82,21 @@ const reducer = (state, action) => {
       return state;
     }
     case "breakSub":
-      return { ...state, break: { ...state.break, cur: state.break.cur - 1 } };
+      return { ...state,audio:false, break: { ...state.break, cur: state.break.cur - 1 } };
     case "sessonSub":
       return {
-        ...state,
+        ...state,audio:false,
         session: { ...state.session, cur: state.session.cur - 1 },
       };
     case "activeBreak":
       return {
-        ...state,
+        ...state,audio:true,
         break: { ...state.break, cur: state.break.init, active: true },
         session: { ...state.session, active: false },
       };
     case "activeSession":
       return {
-        ...state,
+        ...state,audio:true,
         session: { ...state.session, cur: state.session.init, active: true },
         break: { ...state.break, active: false },
       };
@@ -114,6 +115,12 @@ const App = () => {
       <Heading state={state} dispatch={dispatch} />
       <BreakSession state={state} dispatch={dispatch} />
       <Countdown state={state} dispatch={dispatch} />
+       <audio
+        hidden
+        id="beep"
+        controls
+        src={"https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"}
+      />
     </>
   );
 };
@@ -130,11 +137,13 @@ const BreakSession = ({ state, dispatch }) => {
 const Countdown = ({ state, dispatch }) => {
   useEffect(() => {
     if (state.play) {
-      if (state.session.active && state.session.cur === 0) {
+      if (state.session.active && state.session.cur === -1) {
+        document.getElementById("beep").play()
         dispatch("activeBreak");
       }
-
-      if (state.break.active && state.break.cur === 0) {
+      
+      if (state.break.active && state.break.cur === -1) {
+        document.getElementById("beep").play()
         dispatch("activeSession");
       }
 
@@ -146,6 +155,7 @@ const Countdown = ({ state, dispatch }) => {
 
   return (
     <>
+    
       <div>
         <p>{state.session.active ? "SESSION" : "BREAK"}</p>
         <h1>
