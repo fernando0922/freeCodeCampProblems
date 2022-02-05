@@ -12,44 +12,63 @@ const numToTime = (num) => {
   return `${min}:${sec}`;
 };
 
+const checkIncDecValue = (data, val) => {
+  const num = parseInt((data + val) / 60);
+  return num >= 1 && num < 60;
+};
+
 const { useState, useEffect, useReducer } = React;
 
 const init = {
-  break: { init: 60, cur: 60, active: false },
-  session: { init: 60, cur: 60, active: true },
+  break: { init: 300, cur: 300, active: false },
+  session: { init: 1500, cur: 1500, active: true },
   play: false,
 };
 
 const reducer = (state, action) => {
   switch (action) {
     case "breakInc":
-      return {
-        ...state,
-        break: {
-          ...state.break,
-          init: state.break.init + 60,
-          cur: state.break.cur + 60,
-        },
-      };
+      if (checkIncDecValue(state.break.init, 1)) {
+        return {
+          ...state,
+          break: {
+            ...state.break,
+            init: state.break.init + 60,
+            cur: state.break.cur + 60,
+          },
+        };
+      } else {
+        return state;
+      }
+
     case "breakDec":
-      return {
-        ...state,
-        break: {
-          ...state.break,
-          init: state.break.init - 60,
-          cur: state.break.cur - 60,
-        },
-      };
+      if (checkIncDecValue(state.break.init, -1)) {
+        return {
+          ...state,
+          break: {
+            ...state.break,
+            init: state.break.init - 60,
+            cur: state.break.cur - 60,
+          },
+        };
+      } else {
+        return state;
+      }
     case "sessionInc":
-      return {
-        ...state,
-        session: {
-          ...state.session,
-          init: state.session.init + 60,
-          cur: state.session.cur + 60,
-        },
-      };
+      if (checkIncDecValue(state.session.init, 1)) {
+        return {
+          ...state,
+          session: {
+            ...state.session,
+            init: state.session.init + 60,
+            cur: state.session.cur + 60,
+          },
+        };
+      } else {
+        return state;
+      }
     case "sessionDec":
+      if (checkIncDecValue(state.session.init, -1)) {
       return {
         ...state,
         session: {
@@ -58,6 +77,9 @@ const reducer = (state, action) => {
           cur: state.session.cur - 60,
         },
       };
+    }else{
+      return state;
+    }
     case "breakSub":
       return { ...state, break: { ...state.break, cur: state.break.cur - 1 } };
     case "sessonSub":
@@ -66,9 +88,17 @@ const reducer = (state, action) => {
         session: { ...state.session, cur: state.session.cur - 1 },
       };
     case "activeBreak":
-      return {...state, break:{...state.break,cur:state.break.init,active:true},session:{...state.session,active:false}};
+      return {
+        ...state,
+        break: { ...state.break, cur: state.break.init, active: true },
+        session: { ...state.session, active: false },
+      };
     case "activeSession":
-      return {...state, session:{...state.session,cur:state.session.init,active:true},break:{...state.break,active:false}};
+      return {
+        ...state,
+        session: { ...state.session, cur: state.session.init, active: true },
+        break: { ...state.break, active: false },
+      };
     case "play":
       return { ...state, play: !state.play };
     default:
