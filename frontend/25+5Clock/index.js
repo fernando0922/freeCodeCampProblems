@@ -20,8 +20,8 @@ const checkIncDecValue = (data, val) => {
 const { useState, useEffect, useReducer, useRef } = React;
 
 const init = {
-  break: { init: 10, cur: 10, active: false },
-  session: { init: 10, cur: 10, active: true },
+  break: { init: 300, cur: 300, active: false },
+  session: { init: 1500, cur: 1500, active: true },
   play: false
 };
 
@@ -139,13 +139,11 @@ const Countdown = ({ state, dispatch }) => {
     if (state.play) {
       if (state.session.active && state.session.cur === -1) {
        aref.current.play()
-       console.log("=======================");
        dispatch("activeBreak");
       }
       
       if (state.break.active && state.break.cur === -1) {
         aref.current.play()
-        console.log("=======================");
         dispatch("activeSession");
       }
 
@@ -153,7 +151,7 @@ const Countdown = ({ state, dispatch }) => {
         state.session.active ? dispatch("sessonSub") : dispatch("breakSub");
       }, 1000);
     }
-  });
+  },[]);
 
   return (
     <>
@@ -166,18 +164,18 @@ const Countdown = ({ state, dispatch }) => {
         src={"https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"}
       />
       <div>
-        <p>{state.session.active ? "SESSION" : "BREAK"}</p>
-        <h1>
+        <p id="timer-label">{state.session.active ? "SESSION" : "BREAK"}</p>
+        <h1 id="time-left">
           {numToTime(
             state.session.active ? state.session.cur : state.break.cur
           )}
         </h1>
       </div>
       <div>
-        <button onClick={() => dispatch("play")}>
+        <button id="start_stop" onClick={() => dispatch("play")}>
           {state.play ? "PAUSE" : "PLAY"}
         </button>
-        <button onClick={() => dispatch("reset")}>RESET</button>
+        <button id="reset"onClick={() => dispatch("reset")}>RESET</button>
       </div>
     </>
   );
