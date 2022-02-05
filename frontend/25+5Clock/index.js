@@ -131,6 +131,7 @@ const BreakSession = ({ state, dispatch }) => {
 
 const Countdown = ({ state, dispatch }) => {
 
+  let interval = ""
 
   const aref = useRef();
   
@@ -147,11 +148,11 @@ const Countdown = ({ state, dispatch }) => {
         dispatch("activeSession");
       }
 
-      setTimeout(() => {
+      interval = setTimeout(() => {
         state.session.active ? dispatch("sessonSub") : dispatch("breakSub");
       }, 1000);
     }
-  },[]);
+  });
 
   return (
     <>
@@ -171,11 +172,14 @@ const Countdown = ({ state, dispatch }) => {
           )}
         </h1>
       </div>
-      <div>
+      <div id="button-container">
         <button id="start_stop" onClick={() => dispatch("play")}>
           {state.play ? "PAUSE" : "PLAY"}
         </button>
-        <button id="reset"onClick={() => dispatch("reset")}>RESET</button>
+        <button id="reset"onClick={() => {
+          clearTimeout(interval)
+          return dispatch("reset")
+          }}>RESET</button>
       </div>
     </>
   );
